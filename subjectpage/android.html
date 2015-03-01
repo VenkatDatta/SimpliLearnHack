@@ -1,0 +1,885 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<?php $user=$_GET['param'];
+$name=$_GET['param1'];
+$courseID=$_GET['param2'];
+if($courseID=='A')
+{
+$videoIDA='VidA01';
+$videoIDB='VidA02';
+}
+else if($courseID=='B')
+{
+    $videoIDA='VidB01';
+$videoIDB='VidB02';
+}
+else if($courseID=='C')
+{
+    $videoIDA='VidC01';
+$videoIDB='VidC02';
+}
+?>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>1 Col Portfolio - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="../window/dialog-polyfill.css" />
+     <script src="../window/dialog-polyfill.js"></script>
+<style type="text/css">
+    /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 3em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #f3f3f3;
+    margin: 0;
+    display: table;
+    position: relative;
+
+}
+.demo-wrapper {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+
+}
+.html5-dialog {
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+.html5-dialog dialog {
+  top:50px;
+    width: 500px;
+}
+.html5-dialog button#show {
+    position: relative;
+    background-color: #16a085;
+    border-radius: 3px;
+    color: #fff;
+    border-width: 0;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+}
+.html5-dialog button#exit {
+    background-color: #c0392b;
+    border-radius: 3px;
+    color: #fff;
+    border-width: 0;
+    width: 80px;
+    height: 30px;
+    line-height: 28px;
+}
+.html5-dialog button#show:hover {
+    background-color: #1abc9c;
+}
+.html5-dialog button#exit:hover {
+    background-color: #e74c3c;
+}
+.html5-dialog dialog::backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+</style>
+
+<style type="text/css">
+
+
+/* Stylesheet */
+
+
+/* Imports */
+
+@import url(animate.css);
+
+/* Selections */
+
+::selection {
+    color: #fff;
+    text-shadow: none;
+    background: #444;
+}
+
+::-moz-selection {
+    color: #fff;
+    text-shadow: none;
+    background: #444;
+}
+
+/* Basics */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+#container {
+    position: fixed;
+    width: 340px;
+    height: 280px;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -170px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    -webkit-animation-name: bounceIn;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: bounceIn;
+    -moz-animation-fill-mode: both;
+    -moz-animation-duration: 1s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+    animation-name: bounceIn;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+form {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+label {
+    color: #555;
+    display: inline-block;
+    margin-left: 18px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+p a {
+    font-size: 11px;
+    color: #aaa;
+    float: right;
+    margin-top: -13px;
+    margin-right: 20px;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+p a:hover {
+    color: #555;
+}
+
+input {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+input[type=text],
+input[type=password] {
+    color: #777;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    width: 290px;
+    height: 35px;
+    border: 1px solid #c7d0d2;
+    border-radius: 2px;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+input[type=text]:hover,
+input[type=password]:hover {
+    border: 1px solid #b6bfc0;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .7), 0 0 0 5px #f5f7f8;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    border: 1px solid #a8c9e4;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #e6f2f9;
+}
+
+#lower {
+    background: #ecf2f5;
+    width: 100%;
+    height: 69px;
+    margin-top: 20px;
+    box-shadow: inset 0 1px 1px #fff;
+    border-top: 1px solid #ccc;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+input[type=checkbox] {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.check {
+    margin-left: 3px;
+    font-size: 11px;
+    color: #444;
+    text-shadow: 0 1px 0 #fff;
+}
+
+input[type=submit] {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #acd6ef; /*IE fallback*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#acd6ef), to(#6ec2e8));
+    background-image: -moz-linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+    background-image: linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+    border-radius: 30px;
+    border: 1px solid #66add6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
+    background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+    background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+}
+
+input[type=submit]:active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6ec2e8), to(#b6e2ff));
+    background-image: -moz-linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
+    background-image: linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
+}
+
+
+
+
+
+
+
+
+</style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">simplilearn</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Android<br>
+                    <small>Secondary Text Android is a mobile operating system (OS) based on the Linux kernel and currently developed by Google. With a user interface based on direct manipulation, Android is designed primarily for touchscreen mobile devices such as smartphones and tablet computers, with specialized user interfaces for televisions (Android TV), cars (Android Auto), and wrist watches (Android Wear). The OS uses touch inputs that loosely correspond to real-world actions, like swiping, tapping, pinching, and reverse pinching to manipulate on-screen objects, and a virtual keyboard. Despite being primarily designed for touchscreen input, it also has been used in game consoles, digital cameras, regular PCs (e.g. the HP Slate 21) and other electronics. </small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="android1.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Introduction</h3>
+                <h4>Getting started</h4>
+                <p>what is android, where is it used, how is it used, what makes it so famous.</p>
+                <?php echo "<a class=\"btn btn-primary\" href=\"../video.php?param=".$videoIDA."\">View Video <span class=\"glyphicon glyphicon-chevron-right\"></span></a>"; ?>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Two -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive" src="android2.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>User Interface and controlls</h3>
+                <h4>making life beautiful</h4>
+                <p>ui,is most important for any app you develop here is a peek of the development.</p>
+                <?php echo "<a class=\"btn btn-primary\" href=\"../video.php?param=".$videoIDB."\">View Video <span class=\"glyphicon glyphicon-chevron-right\"></span></a>"; ?>
+            </div>
+
+        </div>
+        <!-- /.row -->
+         
+        <hr>
+
+        <!-- Project Three -->
+       
+          <div class="demo-wrapper">
+    <div class="html5-dialog">
+        <dialog id="window">
+        <!--    <h3>Register Form</h3> -->
+            <form>
+                <label for="question1">what is the importance of php? to do</label><br>
+                
+                 <input type="checkbox" name="1" id="q1_1">backhand 
+                  <input type="checkbox" name="2" id="q1_2">fronthand
+                   <input type="checkbox" name="3" id="q1_3">designing
+                    <input type="checkbox" name="4" id="q1_4">farming
+                <br>
+                <br>
+                <label for="question2">why is python fast?</label><br>
+                <input type="checkbox" name="5" id="q2_1">script
+                  <input type="checkbox" name="6" id="q2_2">no compliation
+                   <input type="checkbox" name="7" id="q2_3">opensource
+                    <input type="checkbox" name="8" id="q2_4">none of the above
+                <br>
+                <br>
+                <label for="question3">what is big data?</label><br>
+                 <input type="checkbox" name="9" id="q3_1">large amount data
+                  <input type="checkbox" name="10" id="q3_2">cloud
+                   <input type="checkbox" name="11" id="q3_3">hadoop
+                    <input type="checkbox" name="12" id="q3_4">drupal
+                <br>
+                <br>
+                <label fro = "question4">what is andorid os kernal?</label><br>
+                 <input type="checkbox" name="13" id="q1_1">linux 
+                  <input type="checkbox" name="14" id="q1_2">Msdos
+                   <input type="checkbox" name="15" id="q1_3">mac
+                    <input type="checkbox" name="16" id="q1_4">rasberypi
+                <br>
+
+<br> <label for="name" style="font-size:'30px';">Register for Events </label> <p id="qwe"></p>
+            </form>
+            
+            <button id="exit">Submit</button>
+        </dialog>
+        <button id="show" onclick="checkForm();" >Take the quiz </button>
+        <br><br><br>
+        <button id="show"onClick="location.href='../discussion_page.html'">Discussion Forum</button>
+    </div>
+</div> 
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+           
+    <script type="text/javascript">
+(function() {
+   var dialog = document.querySelector('dialog');
+    dialogPolyfill.registerDialog(dialog);
+   //   var dialog = document.getElementById('window');
+    document.getElementById('show').onclick = function() {
+        //alert("fghfgh");
+        
+
+
+
+
+        dialog.showModal();
+         document.getElementById('show').style.visibility = 'hidden';
+    };
+    document.getElementById('exit').onclick = function() {
+        dialog.close();
+         document.getElementById("qwe").innerHTML = "";
+        document.getElementById('show').style.visibility = 'visible';
+    };
+})();
+
+</script>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+     
+</body>
+
+</html>

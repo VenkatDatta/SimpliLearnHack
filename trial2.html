@@ -1,0 +1,49 @@
+
+<?php
+          
+$server     = 'localhost';
+$username   = 'root';
+$password   = '';
+$database   = 'dsj';
+ 
+$con=mysqli_connect("localhost","root","","dsj");
+    if(mysqli_connect_errno()){
+        echo "ERROR ".mysqli_connect_error();
+    }
+
+
+    //first get lat long of user in focus
+    $result = mysqli_query($con,"SELECT Latitude,Longitude from user where ID=1 "); //INSTEAD OF 1 ENTER USER ID
+        while($row = mysqli_fetch_array($result)) {
+        $ULatitude=$row['Latitude'];
+        $ULongitude=$row['Longitude'];
+           }
+
+
+
+
+
+
+//this is for all other users
+        $result2 = mysqli_query($con,"SELECT ID,Latitude,Longitude from user");
+   
+        while($row = mysqli_fetch_array($result2)) {
+        $Latitude=$row['Latitude'];
+        $Longitude=$row['Longitude'];
+        $Userid=$row['ID'];
+
+        if($Latitude<$ULatitude+5&&$Latitude>$ULatitude-5&&$Longitude<$ULongitude+5&&$Longitude>$ULongitude-5)
+        {
+        	//in the range
+        	//plot this on the graph
+        	echo "<script type=\"text/javascript\">
+        	alert(\"hello\");
+        </script>
+        	";
+        }
+
+    }
+
+
+?>
+     
